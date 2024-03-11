@@ -6,13 +6,13 @@ class Profile:
 
     @property
     def username(self):
-        return self.__username
+        return self.username
 
     @username.setter
-    def username(self, data):
-        if len(data) < 5 or len(data) > 15:
+    def username(self, value):
+        if len(value) < 5 or len(value) > 15:
             raise ValueError("The username must be between 5 and 15 characters.")
-        self.__username = data
+        self.username = value
 
     @property
     def password(self):
@@ -39,8 +39,11 @@ class Profile:
         self.__password = value
 
     def __str__(self):
-        return f'You have a profile with username: "{self.__username}" and password: {"*" * len(self.__password)}'
+        return f'You have a profile with username: "{self.username}" and password: {"*" * len(self.__password)}'
 
 
 
-profile_with_invalid_password = Profile('My_username', 'My-password')
+profile_with_invalid_password = Profile('My_username', 'My-password1')
+print(profile_with_invalid_password)
+
+
